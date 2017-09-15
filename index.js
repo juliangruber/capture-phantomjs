@@ -10,11 +10,15 @@ module.exports = ({
   timeout: timeout = 0,
   format: format = 'png',
   clip: clip = true,
-  ignoreSSLErrors: ignoreSSLErrors = false
+  ignoreSSLErrors: ignoreSSLErrors = false,
+  SSLCertificatesPath
 }) =>
   exec(
     `${phantomjs} ${[
       `--ignore-ssl-errors=${ignoreSSLErrors}`,
+      SSLCertificatesPath
+        ? `--ssl-certificates-path=${SSLCertificatesPath}`
+        : '',
       `${__dirname}/script/render.js`,
       url,
       width,
