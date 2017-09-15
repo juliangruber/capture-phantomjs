@@ -9,10 +9,12 @@ module.exports = ({
   height: height = 768,
   timeout: timeout = 0,
   format: format = 'png',
-  clip: clip = true
+  clip: clip = true,
+  ignoreSSLErrors: ignoreSSLErrors = false
 }) =>
   exec(
     `${phantomjs} ${[
+      `--ignore-ssl-errors=${ignoreSSLErrors}`,
       `${__dirname}/script/render.js`,
       url,
       width,

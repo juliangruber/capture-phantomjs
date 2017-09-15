@@ -26,7 +26,7 @@ capture({
 
 ## API
 
-### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true })
+### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true, ignoreSSLErrors = false })
 
 Capture a screenshot of `url`, returns a `Promise` which resolves with a buffer.
 
@@ -37,7 +37,8 @@ Options:
 - `height` Viewport height
 - `wait` Time in `ms` to wait after the page finished loading all initial resources
 - `format` File format (`png`, `jpg`, `gif`)
-- `clip` Cut the image to exact dimensions, removing the fold.
+- `clip` Cut the image to exact dimensions, removing the fold
+- `ignoreSSLErrors` ignore SSL errors
 
 ## Installation
 
