@@ -47,6 +47,11 @@ With [npm](https://npmjs.org) do:
 npm install capture-phantomjs
 ```
 
+## Related projects
+
+- __[capture-screenshot](https://github.com/juliangruber/capture-screenshot)__ &mdash; Capture screenshots in multiple browsers
+- __[capture-electron](https://github.com/juliangruber/capture-electron)__ &mdash; Capture screenshots using Electron
+
 ## License
 
 (MIT)
