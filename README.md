@@ -47,6 +47,10 @@ With [npm](https://npmjs.org) do:
 npm install capture-phantomjs
 ```
 
+## CI
+
+This project will work in CI environments like Travis and AppVeyor without any additional configuration. It fetches phantomjs itself and doesn't need a X server to run.
+
 ## Related projects
 
 - __[capture-screenshot](https://github.com/juliangruber/capture-screenshot)__ &mdash; Capture screenshots in multiple browsers
