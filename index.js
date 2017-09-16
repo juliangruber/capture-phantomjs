@@ -2,6 +2,7 @@ const { promisify } = require('util')
 const exec = promisify(require('child_process').exec)
 const { path: phantomjs } = require('phantomjs')
 const { Buffer } = require('safe-buffer')
+const escape = require('shell-escape')
 
 const If = (cond, val) => (cond ? val : '')
 
@@ -17,7 +18,8 @@ module.exports = ({
   SSLProtocol
 }) =>
   exec(
-    `${phantomjs} ${[
+    escape([
+      phantomjs,
       `--ignore-ssl-errors=${ignoreSSLErrors}`,
       If(SSLCertificatesPath, `--ssl-certificates-path=${SSLCertificatesPath}`),
       If(SSLProtocol, `--ssl-protocol=${SSLProtocol}`),
@@ -28,6 +30,6 @@ module.exports = ({
       timeout,
       format.toUpperCase(),
       clip
-    ].join(' ')}`,
+    ]),
     { maxBuffer: Infinity }
   ).then(({ stdout }) => Buffer.from(stdout, 'base64'))
