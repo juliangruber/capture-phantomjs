@@ -57,6 +57,7 @@ This project will work in CI environments like Travis and AppVeyor without any a
 ## Related projects
 
 - __[capture-screenshot](https://github.com/juliangruber/capture-screenshot)__ &mdash; Capture screenshots in multiple browsers
+- __[capture-chrome](https://github.com/juliangruber/capture-chrome)__ &mdash; Capture screenshots using Chrome
 - __[capture-electron](https://github.com/juliangruber/capture-electron)__ &mdash; Capture screenshots using Electron
 
 ## License
