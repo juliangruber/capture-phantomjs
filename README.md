@@ -26,7 +26,7 @@ capture({
 
 ## API
 
-### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true, ignoreSSLErrors = false, SSLCertificatesPath })
+### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true, ignoreSSLErrors = false, SSLCertificatesPath, SSLProtocol })
 
 Capture a screenshot of `url`, returns a `Promise` which resolves with a buffer.
 
@@ -40,6 +40,7 @@ Options:
 - `clip` Cut the image to exact dimensions, removing the fold
 - `ignoreSSLErrors` ignore SSL errors
 - `SSLCertificatesPath` path for PhantomJS to look for SSL certificates
+- `SSLProtocol` Supported protocols: `sslv3`, `sslv2`, `tlsv1`, `any`
 
 ## Installation
 

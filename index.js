@@ -3,6 +3,8 @@ const exec = promisify(require('child_process').exec)
 const { path: phantomjs } = require('phantomjs')
 const { Buffer } = require('safe-buffer')
 
+const If = (cond, val) => (cond ? val : '')
+
 module.exports = ({
   url,
   width: width = 1024,
@@ -11,14 +13,14 @@ module.exports = ({
   format: format = 'png',
   clip: clip = true,
   ignoreSSLErrors: ignoreSSLErrors = false,
-  SSLCertificatesPath
+  SSLCertificatesPath,
+  SSLProtocol
 }) =>
   exec(
     `${phantomjs} ${[
       `--ignore-ssl-errors=${ignoreSSLErrors}`,
-      SSLCertificatesPath
-        ? `--ssl-certificates-path=${SSLCertificatesPath}`
-        : '',
+      If(SSLCertificatesPath, `--ssl-certificates-path=${SSLCertificatesPath}`),
+      If(SSLProtocol, `--ssl-protocol=${SSLProtocol}`),
       `${__dirname}/script/render.js`,
       url,
       width,
