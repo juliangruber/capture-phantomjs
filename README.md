@@ -26,7 +26,7 @@ capture({
 
 ## API
 
-### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true, ignoreSSLErrors = false, SSLCertificatesPath, SSLProtocol })
+### screenshot({ url, width = 1024, height = 768, wait = 0, format = 'png', clip = true, cookies = [], ignoreSSLErrors = false, SSLCertificatesPath, SSLProtocol })
 
 Capture a screenshot of `url`, returns a `Promise` which resolves with a buffer.
 
@@ -38,9 +38,26 @@ Options:
 - `wait` Time in `ms` to wait after the page finished loading all initial resources
 - `format` File format (`png`, `jpg`, `gif`)
 - `clip` Cut the image to exact dimensions, removing the fold
+- `cookies` Array of cookie objects, see below
 - `ignoreSSLErrors` ignore SSL errors
 - `SSLCertificatesPath` path for PhantomJS to look for SSL certificates
 - `SSLProtocol` Supported protocols: `sslv3`, `sslv2`, `tlsv1`, `any`
+
+### Cookie format
+
+The cookie format is this:
+
+```js
+{
+  name : 'valid-cookie-name',             // required
+  value : 'valid-cookie-value',           // required
+  domain : 'the-domain.com',              // required
+  path : '/',
+  httponly : true,
+  secure : false,
+  expires : (new Date()).getTime() + 3600 // expires in 1 hour
+}
+```
 
 ## Installation
 

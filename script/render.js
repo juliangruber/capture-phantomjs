@@ -10,6 +10,7 @@ var height = args[3]
 var wait = Number(args[4])
 var format = args[5]
 var clip = args[6] === 'true'
+var cookies = JSON.parse(args[7])
 
 var page = webpage.create()
 page.viewportSize = {
@@ -22,6 +23,10 @@ page.clipRect = {
   width: clip ? width : 0,
   height: clip ? height : 0
 }
+
+cookies.forEach(function (cookie) {
+  phantom.addCookie(cookie)
+})
 
 page.onConsoleMessage = page.onConfirm = page.onPrompt = page.onError = noop
 

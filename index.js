@@ -13,6 +13,7 @@ module.exports = ({
   timeout: timeout = 0,
   format: format = 'png',
   clip: clip = true,
+  cookies: cookies = [],
   ignoreSSLErrors: ignoreSSLErrors = false,
   SSLCertificatesPath,
   SSLProtocol
@@ -29,7 +30,8 @@ module.exports = ({
       height,
       timeout,
       format.toUpperCase(),
-      clip
+      clip,
+      JSON.stringify(cookies)
     ]),
     { maxBuffer: Infinity }
   ).then(({ stdout }) => Buffer.from(stdout, 'base64'))
