@@ -67,6 +67,8 @@ With [npm](https://npmjs.org) do:
 npm install capture-phantomjs
 ```
 
+This project requires `nodejs@8.0.0` or later.
+
 ## CI
 
 This project will work in CI environments like Travis and AppVeyor without any additional configuration. It fetches phantomjs itself and doesn't need a X server to run.
