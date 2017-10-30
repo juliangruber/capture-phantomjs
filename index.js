@@ -10,7 +10,7 @@ module.exports = ({
   url,
   width: width = 1024,
   height: height = 768,
-  timeout: timeout = 0,
+  wait: wait = 0,
   format: format = 'png',
   clip: clip = true,
   cookies: cookies = [],
@@ -28,7 +28,7 @@ module.exports = ({
       url,
       width,
       height,
-      timeout,
+      wait,
       format.toUpperCase(),
       clip,
       JSON.stringify(cookies)
