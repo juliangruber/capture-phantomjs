@@ -1,7 +1,7 @@
 {
   "name": "capture-phantomjs",
   "description": "Capture screenshots using phantomjs",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/capture-phantomjs.git"
