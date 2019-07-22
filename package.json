@@ -17,8 +17,8 @@
     "shell-escape": "^0.2.0"
   },
   "devDependencies": {
-    "prettier-standard": "^10.0.0",
-    "standard": "^11.0.1",
+    "prettier-standard": "^9.1.1",
+    "standard": "^13.1.0",
     "tap": "^12.0.1"
   },
   "keywords": [
